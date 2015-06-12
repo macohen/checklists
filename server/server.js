@@ -1,31 +1,35 @@
 /**
  * Created by cohenma on 6/10/15.
  */
-var mongoose = require('mongoose');
 var express = require('express');
-
-mongoose.connect("mongodb://localhost/checklists");
+var bodyParser = require('body-parser');
+var Checklist = require('./models/checklist.js')
 
 var app = express();
+app.use(bodyParser.json());
 
-var Checklist = mongoose.model('Checklist', { title : String});
-
-var checklist = new Checklist({title : "testlist"});
-
-checklist.save(function(err) {
-    if(err) {
-        console.log('failed');
-    } else {
-        console.log('success');
-    }
-})
-
-app.get("/", function(req, res) {
+app.get('/api/checklists', function(req, res) {
     Checklist.find(function(err, checklists) {
-        res.send(checklists);
+        if(err) { return next(err) }
+        res.json(checklists);
     })
 })
 
-app.listen(3100);
+app.post('/api/checklists', function(req, res, next) {
+    var checklist = new Checklist({
+        title : req.body.title
+    });
+
+    checklist.save(function(err, checklist) {
+        if(err) { return next(err) }
+        res.status(201).json(checklist);
+    })
+
+})
+var port = 3100;
+app.listen(port, function() {
+    console.log('Server listening on ', port);
+
+});
 
 

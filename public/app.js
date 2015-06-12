@@ -10,8 +10,14 @@ app.controller('ChecklistsController', function($scope) {
     ]
 
     $scope.addChecklist = function () {
-     $scope.checklists.unshift(
+        if($scope.checklistTitle) {
+            $scope.checklists.unshift(
+                {
+                    title: $scope.checklistTitle
+                }
+            )
+            $scope.checklistTitle = null;
+        }
+    }
 
-         {title: 'Another List'}
-     )}
 })
