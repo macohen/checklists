@@ -14,7 +14,7 @@
     <h1>Checklists</h1>
     <ul class="list-group">
     <li ng-repeat="checklist in checklists | orderBy:'-dateCreated'" class="list-group-item">
-        {{ checklist.title }}, {{ checklist.dateCreated}}
+        <a ng-href="/checklists/{{checklist._id}}">{{ checklist.title }}</a>, {{ checklist.dateCreated | date }}
     </li>
     </ul>
     <input ng-model="checklistTitle" class="form-control" />

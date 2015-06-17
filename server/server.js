@@ -14,6 +14,7 @@ app.get('/', function(req, res) {
 app.use('/api/checklists',require('./controllers/api/checklists'));
 app.use(require('./controllers/static'));
 
+
 var port = 3100;
 app.listen(port, function() {
     console.log('Server listening on ', port);

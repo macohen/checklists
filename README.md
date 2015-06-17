@@ -1,6 +1,6 @@
-# angular-seed — the seed for AngularJS apps
+# Checklist Manager
 
-This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
+At Viacom, we want to forget no important steps. This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 You can use it to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
 
@@ -15,6 +15,22 @@ The seed app doesn't do much, just shows how to wire two controllers and views t
 To get you started you can simply clone the angular-seed repository and install the dependencies:
 
 ### Prerequisites
+cd server/assets
+Install Bower
+bower install --save angular
+bower install bootstrap
+
+cd ../server
+Install npm
+npm install --save express
+npm install --save body-parser
+npm install --save mongoose
+npm install --global gulp
+npm install --save gulp
+npm install --save gulp-concat
+
+
+
 
 You need git to clone the angular-seed repository. You can get git from
 [http://git-scm.com/](http://git-scm.com/).
