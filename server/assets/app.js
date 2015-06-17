@@ -1,25 +1,2 @@
-/**
- * Created by cohenma on 6/10/15.
- */
-var app = angular.module('app', []);
-app.controller('ChecklistsController', function($scope, $http) {
-    $http.get('http://localhost:3100/api/checklists')
-        .success(function(checklists) {
-            $scope.checklists = checklists;
-        })
-
-    $scope.addChecklist = function () {
-        if($scope.checklistTitle) {
-            $http.post('/api/checklists', {
-                title: $scope.checklistTitle
-                }
-            ).success(function(checklist) {
-                    $scope.checklists.unshift(checklist);
-                    $scope.checklistTitle = null;
-                }
-            )
-
-        }
-    }
-
-})
+angular.module("app",[]),angular.module("app").controller("ChecklistsController",["$scope","ChecklistsSvc",function(c,t){t.fetch().success(function(t){c.checklists=t}),c.addChecklist=function(){c.checklistTitle&&t.create({title:c.checklistTitle}).success(function(t){c.checklists.unshift(t),c.checklistTitle=null})},t.fetch().success(function(t){c.checklists=t})}]),angular.module("app").service("ChecklistsSvc",["$http",function(c){this.fetch=function(){return c.get("/api/checklists")},this.create=function(t){return c.post("/api/checklists",t)},this.fetchById=function(t){return c.get("/api/checklists/"+t)}}]);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vZHVsZS5qcyIsImNoZWNrbGlzdHMuY3RybC5qcyIsImNoZWNrbGlzdHMuc3ZjLmpzIl0sIm5hbWVzIjpbImFuZ3VsYXIiLCJtb2R1bGUiLCJjb250cm9sbGVyIiwiJHNjb3BlIiwiQ2hlY2tsaXN0c1N2YyIsImZldGNoIiwic3VjY2VzcyIsImNoZWNrbGlzdHMiLCJhZGRDaGVja2xpc3QiLCJjaGVja2xpc3RUaXRsZSIsImNyZWF0ZSIsInRpdGxlIiwiY2hlY2tsaXN0IiwidW5zaGlmdCIsInNlcnZpY2UiLCIkaHR0cCIsInRoaXMiLCJnZXQiLCJwb3N0IiwiZmV0Y2hCeUlkIiwiaWQiXSwibWFwcGluZ3MiOiJBQUFBQSxRQUFBQyxPQUFBLFVDQUFELFFBQUFDLE9BQUEsT0FDQUMsV0FBQSx3QkFBQSxTQUFBLGdCQUFBLFNBQUFDLEVBQUFDLEdBQ0FBLEVBQUFDLFFBQUFDLFFBQUEsU0FBQUMsR0FDQUosRUFBQUksV0FBQUEsSUFHQUosRUFBQUssYUFBQSxXQUNBTCxFQUFBTSxnQkFDQUwsRUFBQU0sUUFDQUMsTUFBQVIsRUFBQU0saUJBRUFILFFBQUEsU0FBQU0sR0FDQVQsRUFBQUksV0FBQU0sUUFBQUQsR0FDQVQsRUFBQU0sZUFBQSxRQU1BTCxFQUFBQyxRQUFBQyxRQUFBLFNBQUFDLEdBQ0FKLEVBQUFJLFdBQUFBLE9DcEJBUCxRQUFBQyxPQUFBLE9BQ0FhLFFBQUEsaUJBQUEsUUFBQSxTQUFBQyxHQUNBQyxLQUFBWCxNQUFBLFdBQ0EsTUFBQVUsR0FBQUUsSUFBQSxvQkFFQUQsS0FBQU4sT0FBQSxTQUFBRSxHQUNBLE1BQUFHLEdBQUFHLEtBQUEsa0JBQUFOLElBRUFJLEtBQUFHLFVBQUEsU0FBQUMsR0FDQSxNQUFBTCxHQUFBRSxJQUFBLG1CQUFBRyIsImZpbGUiOiJhcHAuanMiLCJzb3VyY2VzQ29udGVudCI6WyJhbmd1bGFyLm1vZHVsZSgnYXBwJywgW10pOyIsImFuZ3VsYXIubW9kdWxlKCdhcHAnKVxuICAgIC5jb250cm9sbGVyKCdDaGVja2xpc3RzQ29udHJvbGxlcicsIGZ1bmN0aW9uKCRzY29wZSwgQ2hlY2tsaXN0c1N2Yykge1xuICAgIENoZWNrbGlzdHNTdmMuZmV0Y2goKS5zdWNjZXNzKGZ1bmN0aW9uKGNoZWNrbGlzdHMpIHtcbiAgICAgICAgJHNjb3BlLmNoZWNrbGlzdHMgPSBjaGVja2xpc3RzO1xuICAgIH0pXG5cbiAgICAkc2NvcGUuYWRkQ2hlY2tsaXN0ID0gZnVuY3Rpb24gKCkge1xuICAgICAgICBpZigkc2NvcGUuY2hlY2tsaXN0VGl0bGUpIHtcbiAgICAgICAgICAgIENoZWNrbGlzdHNTdmMuY3JlYXRlKHtcbiAgICAgICAgICAgICAgICAgICAgdGl0bGU6ICRzY29wZS5jaGVja2xpc3RUaXRsZVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICkuc3VjY2VzcyhmdW5jdGlvbihjaGVja2xpc3QpIHtcbiAgICAgICAgICAgICAgICAgICAgJHNjb3BlLmNoZWNrbGlzdHMudW5zaGlmdChjaGVja2xpc3QpO1xuICAgICAgICAgICAgICAgICAgICAkc2NvcGUuY2hlY2tsaXN0VGl0bGUgPSBudWxsO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIClcblxuICAgICAgICB9XG4gICAgfVxuICAgIENoZWNrbGlzdHNTdmMuZmV0Y2goKS5zdWNjZXNzKGZ1bmN0aW9uKGNoZWNrbGlzdHMpIHtcbiAgICAgICAgJHNjb3BlLmNoZWNrbGlzdHMgPSBjaGVja2xpc3RzO1xuICAgIH0pXG5cblxufSlcbiIsImFuZ3VsYXIubW9kdWxlKCdhcHAnKVxuICAgIC5zZXJ2aWNlKCdDaGVja2xpc3RzU3ZjJywgZnVuY3Rpb24oJGh0dHApIHtcbiAgICB0aGlzLmZldGNoID0gZnVuY3Rpb24oKSB7XG4gICAgICAgIHJldHVybiAkaHR0cC5nZXQoJy9hcGkvY2hlY2tsaXN0cycpO1xuICAgIH1cbiAgICB0aGlzLmNyZWF0ZSA9IGZ1bmN0aW9uKGNoZWNrbGlzdCkge1xuICAgICAgICByZXR1cm4gJGh0dHAucG9zdCgnL2FwaS9jaGVja2xpc3RzJywgY2hlY2tsaXN0KTtcbiAgICB9XG4gICAgdGhpcy5mZXRjaEJ5SWQgPSBmdW5jdGlvbihpZCkge1xuICAgICAgICByZXR1cm4gJGh0dHAuZ2V0KCcvYXBpL2NoZWNrbGlzdHMvJyArIGlkKVxuICAgIH1cbn0pXG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=

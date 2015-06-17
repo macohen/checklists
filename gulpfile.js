@@ -6,7 +6,7 @@ var sourceMaps = require('gulp-sourcemaps')
 //var developServer = require('gulp-develop-server')
 
 gulp.task('js', function() {
-    gulp.src(['ng/module.js','ng/**/*.js'])
+    gulp.src(['src/ng/module.js','src/ng/**/*.js'])
         .pipe(sourceMaps.init())
             .pipe(concat('app.js'))
             .pipe(ngAnnotate())
@@ -16,7 +16,7 @@ gulp.task('js', function() {
 })
 
 gulp.task('watch:js', ['js'], function() {
-    gulp.watch('ng/**/*.js', ['js'])
+    gulp.watch('src/ng/**/*.js', ['js'])
 })
 
 /*gulp.task('server:restart', function() {
