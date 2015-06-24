@@ -6,3 +6,4 @@ tmp
 .idea
 server/assets/**
 server/assets
+src/server/assets

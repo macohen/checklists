@@ -1,5 +1,4 @@
-angular.module('app')
-    .controller('ChecklistsController', function($scope, ChecklistsSvc) {
+angular.module('app').controller('ChecklistsController', function($scope, ChecklistsSvc) {
     ChecklistsSvc.fetch().success(function(checklists) {
         $scope.checklists = checklists;
     })
@@ -13,13 +12,13 @@ angular.module('app')
                     $scope.checklists.unshift(checklist);
                     $scope.checklistTitle = null;
                 }
-            )
+            );
 
         }
     }
     ChecklistsSvc.fetch().success(function(checklists) {
         $scope.checklists = checklists;
-    })
+    });
 
 
-})
+});

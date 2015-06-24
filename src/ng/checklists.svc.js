@@ -1,5 +1,4 @@
-angular.module('app')
-    .service('ChecklistsSvc', function($http) {
+angular.module('app').service('ChecklistsSvc', function($http) {
     this.fetch = function() {
         return $http.get('/api/checklists');
     }
@@ -7,6 +6,6 @@ angular.module('app')
         return $http.post('/api/checklists', checklist);
     }
     this.fetchById = function(id) {
-        return $http.get('/api/checklists/' + id)
+        return $http.get('/api/checklists/' + id);
     }
-})
+});
