@@ -29,7 +29,3 @@ gulp.task('watch:css', function () {
 })
 
 gulp.task('dev', ['watch:css','watch:js','dev:server']);
-
-/*gulp.task('server:restart', function() {
-    gulp.watch(['./app.js'], developServer.restart);
-})*/
