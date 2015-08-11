@@ -4,6 +4,6 @@ bower_components/
 tmp
 .DS_Store
 .idea
-server/assets/**
-server/assets
 src/server/assets
+src/server/assets/**
+*.iml
