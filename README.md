@@ -1,18 +1,12 @@
 # Checklist Manager
 
-At Viacom, we want to forget no important steps. This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
-You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
-
-The seed contains a sample AngularJS application and is preconfigured to install the Angular
-framework and a bunch of development and testing tools for instant web development gratification.
-
-The seed app doesn't do much, just shows how to wire two controllers and views together.
-
+Inspired by the Checklist Manifesto, this MEAN stack application is my attempt to:
+## Learn MEAN Stack Development
+## Create an application to create master checklists and allow users to create instances of those checklists for use.
 
 ## Getting Started
 
-To get you started you can simply clone the angular-seed repository and install the dependencies:
+To get you started you can simply clone the repository and install the dependencies:
 
 ### Prerequisites
 cd server/assets
@@ -30,10 +24,6 @@ npm install --save gulp
 npm install --save gulp-concat
 
 
-
-
-You need git to clone the angular-seed repository. You can get git from
-[http://git-scm.com/](http://git-scm.com/).
 
 We also use a number of node.js tools to initialize and test angular-seed. You must have node.js and
 its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).

@@ -4,6 +4,10 @@
 var Checklist = require('../../models/checklist');
 var router = require('express').Router();
 
+router.get('/:id', function(req, res, next) {
+    return res.json(req.params.id);
+})
+
 router.get('/', function(req, res, next) {
     console.log('getting checklists');
     Checklist.find()

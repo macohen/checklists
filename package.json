@@ -32,9 +32,11 @@
     "fs": "0.0.2",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.5.2",
+    "gulp-jshint": "^1.11.2",
     "gulp-ng-annotate": "^1.0.0",
+    "gulp-nodemon": "^2.0.3",
     "gulp-sourcemaps": "^1.5.2",
-    "gulp-stylus": "^2.0.5",
+    "gulp-stylus": "^2.0.6",
     "gulp-uglify": "^1.2.0",
     "mongoose": "^4.0.5"
   }

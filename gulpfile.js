@@ -7,7 +7,7 @@ var sourceMaps = require('gulp-sourcemaps')
 var fs = require('fs');
 fs.readdirSync(__dirname + '/gulp').forEach(function(task) {
     require('./gulp/' + task);
-})
+})+
 //var developServer = require('gulp-develop-server')
 
 gulp.task('js', function() {
@@ -23,6 +23,12 @@ gulp.task('js', function() {
 gulp.task('watch:js', ['js'], function() {
     gulp.watch('src/ng/**/*.js', ['js'])
 })
+
+gulp.task('watch:css', function () {
+    gulp.watch('src/css/**/*.styl', ['css'])
+})
+
+gulp.task('dev', ['watch:css','watch:js','dev:server']);
 
 /*gulp.task('server:restart', function() {
     gulp.watch(['./app.js'], developServer.restart);
