@@ -6,12 +6,18 @@ var bodyParser = require('body-parser');
 var env = require('node-env-file');
 
 var app = express();
+
+
+//configure the environment.  look for a '.cfg' file with the value of the Express env variable
 var env_cfg = app.get('env');
 var cfg_file = __dirname + '/' + env_cfg + '.cfg';
 console.log("Environment = " + env_cfg);
 console.log("Loading config from " + cfg_file);
 env(__dirname + '/' + env_cfg + '.cfg');
 console.log(process.env);
+
+
+
 app.use(bodyParser.json());
 
 app.get('/', function(req, res) {

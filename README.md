@@ -54,6 +54,11 @@ folders in your project.
 angular-seed changes this location through the `.bowerrc` file.  Putting it in the app folder makes
 it easier to serve the files by a webserver.*
 
+
+### Configure the Application
+Using the Express "env" parameter, a configuration file will be selected. Make sure you have a file called 
+"development.cfg" and/or "production.cfg in src/server". A sample development.cfg is included.
+
 ### Run the Application
 
 We have preconfigured the project with a simple development web server.  The simplest way to start
