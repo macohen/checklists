@@ -9,41 +9,26 @@ Inspired by the Checklist Manifesto, this MEAN stack application is my attempt t
 To get you started you can simply clone the repository and install the dependencies:
 
 ### Prerequisites
-cd server/assets
 Install Bower
-bower install --save angular
-bower install bootstrap
+bower install
 
-cd ../server
 Install npm
-npm install --save express
-npm install --save body-parser
-npm install --save mongoose
-npm install --global gulp
-npm install --save gulp
-npm install --save gulp-concat
+npm install
 
 
 
 We also use a number of node.js tools to initialize and test angular-seed. You must have node.js and
 its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
 
-### Clone angular-seed
+### Clone checklists
 
-Clone the angular-seed repository using [git][git]:
+Clone the Checklists repository using [git][git]:
 
 ```
-git clone https://github.com/angular/angular-seed.git
-cd angular-seed
+git clone https://github.com/macohen/checklists.git
+cd checklists
 ```
 
-If you just want to start a new project without the angular-seed commit history then you can do:
-
-```bash
-git clone --depth=1 https://github.com/angular/angular-seed.git <your-project-name>
-```
-
-The `depth=1` tells git to only pull down one commit worth of historical data.
 
 ### Install Dependencies
 
@@ -99,7 +84,7 @@ src/                    --> application source files
 
 ## Testing
 
-There are two kinds of tests in the angular-seed application: Unit tests and End to End tests.
+There are two kinds of tests in the Checklists application: Unit tests and End to End tests.
 
 ### Running Unit Tests
 
