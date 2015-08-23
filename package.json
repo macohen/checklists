@@ -1,9 +1,9 @@
 {
   "name": "checklists",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A Checklist Management Tool",
-  "repository": "https://stash.mtvi.com/projects/SAN/repos/checklists-mean/browse",
+  "repository": "https://github.com/macohen/checklists",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",

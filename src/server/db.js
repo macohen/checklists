@@ -3,7 +3,7 @@
  */
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/checklists', function() {
+mongoose.connect('mongodb://' + process.env.MONGO_HOST + ':' + process.env.MONGO_PORT + '/checklists', function() {
     console.log('mongodb connected');
 })
 
